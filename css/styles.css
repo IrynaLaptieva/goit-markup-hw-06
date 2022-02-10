@@ -833,11 +833,24 @@ nav,
   top: 8px;
   right: 8px;
   align-items: center;
+
+  transition-property: fill;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing);
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  fill: var(--accent-color);
 }
 
 .modal-form {
   margin-right: 40px;
   margin-left: 40px;
+}
+
+.form-field {
+  margin-bottom: 10px;
 }
 
 .modal-title {
@@ -852,12 +865,41 @@ nav,
   margin-bottom: 12px;
 }
 
+.modal-input-wrap {
+  position: relative;
+}
+
+.modal-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  transition-property: fill;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing);
+}
+
 .modal-input {
   width: 100%;
   height: 40px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  margin-bottom: 10px;
+
+  transition-property: border-color;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing);
+}
+
+.modal-input:focus,
+.modal-input:hover {
+  border-color: var(--accent-color);
+  cursor: pointer;
+}
+
+.modal-input:focus + .modal-icon,
+.modal-input:hover + .modal-icon {
+  fill: var(--accent-color);
 }
 
 .modal-lable {
@@ -870,6 +912,9 @@ nav,
 }
 
 .modal-text {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
   width: 100%;
   height: 100%;
   color: rgba(117, 117, 117, 0.5);
@@ -879,6 +924,16 @@ nav,
   padding: 12px 16px;
   resize: none;
   margin-bottom: 20px;
+
+  transition-property: border-color;
+  transition-duration: var(--duration);
+  transition-timing-function: var(--timing);
+}
+
+.modal-text:hover,
+.modal-text:focus {
+  border-color: var(--accent-color);
+  cursor: pointer;
 }
 
 .modal-check-text {
@@ -890,6 +945,27 @@ nav,
   align-items: center;
   text-align: center;
   margin-bottom: 30px;
+}
+
+.modal-check-text span {
+  width: 16px;
+  height: 15px;
+  border: 2px solid #000000;
+  border-radius: 2px;
+  margin-right: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-check:checked + .modal-check-text > span {
+  background-color: var(--accent-color);
+  border: none;
+}
+
+.contract {
+  color: var(--accent-color);
+  margin-left: 5px;
 }
 
 .modal-btn {
@@ -910,7 +986,10 @@ nav,
   padding-right: 55px;
   padding-bottom: 10px;
   padding-left: 56px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 40px;
+  display: flex;
 
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
