@@ -617,6 +617,10 @@ nav,
   margin-left: 93px;
 }
 
+.online-form {
+  display: flex;
+}
+
 .online-title {
   color: var(--primary-light-color);
   font-style: normal;
@@ -1043,6 +1047,7 @@ nav,
 .contract {
   color: var(--accent-color);
   margin-left: 5px;
+  text-decoration: underline;
 }
 
 .modal-btn {
